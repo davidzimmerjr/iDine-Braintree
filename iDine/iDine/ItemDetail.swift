@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemDetail: View {
     @EnvironmentObject var order: Order
+    @State private var quantity = 0
     let item: MenuItem
     
     var body: some View {
@@ -39,10 +40,20 @@ struct ItemDetail: View {
 //                            .scaledToFill()
 //                            .edgesIgnoringSafeArea(.all))
             Text(item.description).padding()
+            Picker("Select Quantity: \(quantity + 1)", selection: $quantity) {
+                    ForEach(1 ..< 20) {
+                        Text("\($0)")
+                    }
+            }.pickerStyle(MenuPickerStyle())
+            Spacer()
             Spacer()
             Button("Add To Cart"){
-                order.add(item: item)
+                for _ in 0...quantity {
+                    order.add(item: item)
+                }
             }.padding().font(.headline).background(Color.red).foregroundColor(.white).clipShape(Capsule())
+                
+            
             Spacer()
         }.navigationTitle(item.name).navigationBarTitleDisplayMode(.inline)
     }
