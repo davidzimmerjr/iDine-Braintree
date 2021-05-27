@@ -17,18 +17,26 @@ struct OrderView: View {
     @EnvironmentObject var order: Order
     
     var body: some View {
+        let _items = order.items
+        let counts = _items.reduce(into: [:]) { counts, item in counts[item, default: 0] += 1 }
+        
         NavigationView {
             List {
                 Section {
-                    ForEach(order.items){ item in
+                    
+                    ForEach(Array(counts.keys), id: \.self){ key in
                         HStack {
-                            Image(item.thumbnailImage)
+                            Text("\(counts[key] ?? 0)")
+                                .frame(width: 20, alignment: .trailing)
+                            Spacer()
+                                .frame(width: 15)
+                            Image(key.thumbnailImage)
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.red, lineWidth: 2))
-                            Text(item.name)
+                                .frame(alignment: .leading)
+                            Text(key.name)
                             Spacer()
-                            Text("$\(item.price, specifier: "%.2f")")
-                            Spacer()
+                            Text("$\(key.price * Double(counts[key] ?? 0), specifier: "%.2f")")
                         }
                     }.onDelete(perform: deleteItems)
                 }
