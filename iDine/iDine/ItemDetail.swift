@@ -19,26 +19,13 @@ struct ItemDetail: View {
                 Image(item.mainImage)
                     .resizable()
                     .scaledToFill()
-//                    .padding(2)
                 Text("Photo: \(item.photoCredit)")
                     .padding(4)
-//                    .background(Color.black)
                     .foregroundColor(.gray)
                     .font(.caption2)
                     .offset(x: -5, y: -5)
             }
-//            ZStack{
-//                VStack{
-//                    Text(item.description).padding()
-//                    Button("Add To Cart"){
-//                        order.add(item: item)
-//                    }.padding().font(.headline).background(Color.red).foregroundColor(.white).clipShape(Capsule())
-//
-//                }
-//            }.background(Image(item.mainImage)
-//                            .resizable()
-//                            .scaledToFill()
-//                            .edgesIgnoringSafeArea(.all))
+
             Text(item.description).padding()
             Picker("Select Quantity: \(quantity + 1)", selection: $quantity) {
                     ForEach(1 ..< 20) {
