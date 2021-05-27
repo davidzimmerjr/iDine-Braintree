@@ -42,11 +42,15 @@ struct OrderView: View {
                 }
                 
                 Section{
-                    NavigationLink(
-                        destination: CheckOutView()){
-                            Text("Place Order")
+                    NavigationLink(destination: CheckOutView()){
+                        Spacer()
+                        Text("Place Order")
+                            .foregroundColor(.white)
+                            .font(Font.headline.weight(.black))
+                        Spacer()
                     }
                 }.disabled(order.items.isEmpty)
+                .listRowBackground(Color.red)
             }
             .navigationTitle("Order")
             .listStyle(InsetGroupedListStyle())
