@@ -15,32 +15,58 @@ import SwiftUI
 
 struct OrderView: View {
     @EnvironmentObject var order: Order
+    @State private var quantitySelector = 2
     
     var body: some View {
-        let _items = order.items
-        let counts = _items.reduce(into: [:]) { counts, item in counts[item, default: 0] += 1 }
-        
+        let orderItems = order.items
+        let itemsQuantity = order.itemQuantity
+//        let orderCounts = orderItems.reduce(into: [:]) { counts, item in counts[item, default: 0] += 1 }
+
         NavigationView {
             List {
                 Section {
-                    
-                    ForEach(Array(counts.keys), id: \.self){ key in
+//                    let _items = condenseItems(items: orderItems, dict: orderCounts)
+                    ForEach(0..<orderItems.count, id: \.self) { index in
                         HStack {
-                            Text("\(counts[key] ?? 0)")
-                                .frame(width: 20, alignment: .trailing)
+                            let message = "\(itemsQuantity[index]) ▾"
+                            Picker(message, selection: $order.itemQuantity[index]) {//$quantitySelector) {
+//                                updateQuantity(quantity: quantitySelector, index: index)
+                                ForEach(0 ..< 20) {
+                                    Text("\($0)")
+                                }
+//                                order.itemQuantity = quantitySelector
+                            }.pickerStyle(MenuPickerStyle())
                             Spacer()
-                                .frame(width: 15)
-                            Image(key.thumbnailImage)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.red, lineWidth: 2))
+                            Image(orderItems[index].thumbnailImage).clipShape(Circle())
+                                .overlay(Circle()
+                                .stroke(Color.red, lineWidth: 2))
                                 .frame(alignment: .leading)
-                            Text(key.name)
+                            Spacer().frame(width: 15)
+                            Text(orderItems[index].name)
                             Spacer()
-                            Text("$\(key.price * Double(counts[key] ?? 0), specifier: "%.2f")")
+                            Text("$\(orderItems[index].price * Double(itemsQuantity[index]), specifier: "%.2f")")
+                            
+                            
+                            
                         }
-                    }.onDelete(perform: deleteItems)
+                        
+                            
+                            
+//                        HStack {
+//                            Text(itemsQuantity)
+//                                .frame(width: 20, alignment: .trailing)
+//                            Spacer()
+//                                .frame(width: 15)
+//                            Image(_items.thumbnailImage)
+//                                .clipShape(Circle())
+//                                .overlay(Circle().stroke(Color.red, lineWidth: 2))
+//                                .frame(alignment: .leading)
+//                            Text(_items.name)
+//                            Spacer()
+//                            Text("$\(_items.price * Double(orderCounts[_items] ?? 0), specifier: "%.2f")")
+//                        }
+                    }//.onDelete(perform: deleteItems)
                 }
-                
                 Section{
                     NavigationLink(
                         destination: CheckOutView()){
@@ -50,14 +76,28 @@ struct OrderView: View {
             }
             .navigationTitle("Order")
             .listStyle(InsetGroupedListStyle())
-            .toolbar{
-                EditButton()
-            }
         }
     }
     
-    func deleteItems(at offsets: IndexSet){
-        order.items.remove(atOffsets: offsets)
+    
+//    func deleteItems(at offsets: IndexSet){
+//        order.items.remove(atOffsets: offsets)
+//    }
+    
+//    func condenseItems(items: Array<MenuItem>, dict: Dictionary<MenuItem, Int>) -> [MenuItem]{
+//        var condensedArray = [MenuItem]()
+//
+//        for item in items {
+//            if !condensedArray.contains(item) {
+//                condensedArray.append(item)
+//            }
+//        }
+//
+//        return condensedArray
+//    }
+    
+    func updateQuantity(quantity: Int, index: Int) {
+        order.itemQuantity[index] = quantity
     }
 }
 
