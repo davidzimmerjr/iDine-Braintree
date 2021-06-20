@@ -15,23 +15,29 @@ class Order: ObservableObject, Codable {
     
     
     @Published var items = [MenuItem]()
-    @Published var names = [String]()
+    @Published var itemQuantity = [Int]()
+    @Published var names = [String]() //might not need to use this anymore. Idk right now.
     var nonce = ""
     var total = 0.0
     var tipValue = 0.0
     var taxValue = 0.0
     
     var cartTotal: Double {
+        var _cartTotal = 0.0
         if items.count > 0 {
-//            return 0
-            return Double(items.reduce(0) { $0 + $1.price })
+            for i in 0..<items.count {
+                _cartTotal = _cartTotal + (items[i].price * Double(itemQuantity[i]))
+            }
+            return _cartTotal
         } else {
             return 0
         }
     }
 
-    func add(item: MenuItem) {
+    func add(item: MenuItem, quantity: Int) {
         items.append(item)
+        itemQuantity.append(quantity)
+        
         names.append(item.name)
     }
 

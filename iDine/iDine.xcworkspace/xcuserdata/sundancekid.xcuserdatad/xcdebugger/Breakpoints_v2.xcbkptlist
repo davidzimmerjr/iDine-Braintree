@@ -14,10 +14,10 @@
             filePath = "iDine/CheckOutViewBraintree.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "placeOrder(paymentMethodNonce:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,8 +30,8 @@
             filePath = "iDine/Order.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "iDine/Order.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "encode(to:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,9 +62,9 @@
             filePath = "iDine/Order.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "add(item:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "add(item:quantity:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -216,6 +216,159 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iDine/Order.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "Order"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - af47581eca1a662a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of iDine.Order.itemQuantity : Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 9a31f2d2ba53b054"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.itemQuantity.getter : Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 2b08d9402af84860"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.itemQuantity.setter : Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 621d891c3d05fba3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.itemQuantity.modify : Swift.Array&lt;Swift.Int&gt;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 9d7246a63f83b460"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.itemQuantity.modify : Swift.Array&lt;Swift.Int&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - d66fa66763e3f977"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.$itemQuantity.getter : Combine.Published&lt;Swift.Array&lt;Swift.Int&gt;&gt;.Publisher"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 66eaff6c13393683"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.$itemQuantity.setter : Combine.Published&lt;Swift.Array&lt;Swift.Int&gt;&gt;.Publisher"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "233">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 4782ae197f13611c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.$itemQuantity.modify : Combine.Published&lt;Swift.Array&lt;Swift.Int&gt;&gt;.Publisher"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "703556B1-E11F-402F-A957-1F4FE3E76F38 - 1203fce0c645a65b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iDine.Order.$itemQuantity.modify : Combine.Published&lt;Swift.Array&lt;Swift.Int&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "iDine"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sundancekid/Documentos/Dev/iDine/iDine+Braintree_v2/iDine/iDine/Order.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "17">
                </Location>
             </Locations>

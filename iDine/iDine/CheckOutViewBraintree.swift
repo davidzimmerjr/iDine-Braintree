@@ -85,16 +85,14 @@ struct CheckOutView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
             }
-            Section(header:
-                        
-                        Text("Total: \(totalPrice)")
+            Section(header:Text("Total: \(totalPrice)")
                             .font(.largeTitle)
             ){
                 ZStack{
-                    VStack {
-                        Text("Subtotal: \(order.cartTotal, specifier: "%.2f")")
-                        Text("Tax: \(Double(order.cartTotal) *  tax, specifier: "%.2f")")
-                        Text("Tip: \(Double(order.cartTotal) * (1 + tax) * (Double(tipAmount)/100), specifier: "%.2f")").padding()
+                    VStack (alignment: .leading) {
+                        Text("Subtotal: $\(order.cartTotal, specifier: "%.2f")")
+                        Text("Tax: $\(Double(order.cartTotal) *  tax, specifier: "%.2f")")
+                        Text("Tip: $\(Double(order.cartTotal) * (1 + tax) * (Double(tipAmount)/100), specifier: "%.2f")")
                         
                         Button("Pay"){
                             // get client token
@@ -149,15 +147,11 @@ struct CheckOutView: View {
             print("Failed to encode order")
             return
         }
-//        print("in post nonce")
-//        print(paymentMethodNonce)
-//        print("nonce above")
-        
-        
+        print(order)
         let url = "http://127.0.0.1:5000/checkouts"
         let paymentURL = URL(string: url)!
         var request = URLRequest(url: paymentURL)
-//        request.httpBody = "payment_method_nonce=\(paymentMethodNonce)".data(using: String.Encoding.utf8)
+
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         request.httpBody = encoded
