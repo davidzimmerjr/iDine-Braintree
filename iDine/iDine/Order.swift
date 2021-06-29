@@ -35,8 +35,13 @@ class Order: ObservableObject, Codable {
     }
 
     func add(item: MenuItem, quantity: Int) {
-        items.append(item)
-        itemQuantity.append(quantity)
+        if !items.contains(item) {// if item doesn't already exist in list
+            items.append(item)
+            itemQuantity.append(quantity)
+        } else {
+            let index = items.firstIndex(of: item)
+            itemQuantity[index!] = itemQuantity[index!] + quantity
+        }
         
         names.append(item.name)
     }
