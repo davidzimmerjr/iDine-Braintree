@@ -151,38 +151,36 @@ struct OrderView: View {
                                 self.showDropIn = true
                             }.padding().font(.headline).background(Color.red).foregroundColor(.white).clipShape(Capsule())
                         }
-                        if self.showDropIn {
-                            BTDropInRepresentable(authorization: token, handler: { controller, result, error in
-                                if (error != nil) {
-                                            print("ERROR")
-                                } else if (result?.isCanceled == true) {
-                                    print("CANCELED")
-                                } else if let result = result {
-                                    let selectedPaymentMethod = result.paymentMethod
-                                    if (selectedPaymentMethod != nil) {
-                                        order.nonce = selectedPaymentMethod?.nonce ?? ""
-                                    }
-                                    placeOrder(paymentMethodNonce: selectedPaymentMethod!.nonce)
-                                }
-                                controller.dismiss(animated: true, completion: nil)
-                                // send nonce
-                                
-                                self.showDropIn = false
-                            }).edgesIgnoringSafeArea(.vertical)
-                        }
+                        
                     }
                 }.padding()
                 .background(Color.white)
                 .cornerRadius(25)
                 .padding()
-                
             Spacer()
             }//end VStack
-            
             .alert(isPresented: $showingPaymentAlert) {
                 Alert(title: Text("Order Confirmed"), message: Text("Your total was  \(totalPrice)"), dismissButton: .default(Text("OK")))
             }
-        
+            if self.showDropIn {
+                BTDropInRepresentable(authorization: token, handler: { controller, result, error in
+                    if (error != nil) {
+                                print("ERROR")
+                    } else if (result?.isCanceled == true) {
+                        print("CANCELED")
+                    } else if let result = result {
+                        let selectedPaymentMethod = result.paymentMethod
+                        if (selectedPaymentMethod != nil) {
+                            order.nonce = selectedPaymentMethod?.nonce ?? ""
+                        }
+                        placeOrder(paymentMethodNonce: selectedPaymentMethod!.nonce)
+                    }
+                    controller.dismiss(animated: true, completion: nil)
+                    // send nonce
+                    
+                    self.showDropIn = false
+                }).edgesIgnoringSafeArea(.vertical)
+            }
         }
     }//end body
     
