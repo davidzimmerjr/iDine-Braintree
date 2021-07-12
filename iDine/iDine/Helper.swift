@@ -19,11 +19,13 @@ extension Bundle {
         }
 
         let decoder = JSONDecoder()
-
-        guard let loaded = try? decoder.decode(T.self, from: data) else {
+        
+        do {
+            let loaded = try decoder.decode(T.self, from: data)
+            return loaded
+        } catch {
+            print(error)
             fatalError("Failed to decode \(file) from bundle.")
         }
-
-        return loaded
     }
 }

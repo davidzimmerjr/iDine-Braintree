@@ -73,7 +73,7 @@ struct OrderView: View {
 //                                            }
                                         }.pickerStyle(MenuPickerStyle())
                                         Spacer().frame(maxWidth: 25)
-                                        Image(orderItems[index].thumbnailImage).clipShape(Circle())
+//                                        Image(orderItems[index].thumbnailImage).clipShape(Circle())
                                             .overlay(Circle()
                                             .stroke(Color.red, lineWidth: 2))
                                             .frame(alignment: .leading)

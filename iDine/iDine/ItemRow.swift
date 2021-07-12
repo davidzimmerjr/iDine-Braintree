@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ItemRow : View {
-    let item: MenuItem
+//    let item: MenuItem
+    let item: ItemType
     let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
 
     var body: some View {
@@ -18,7 +19,7 @@ struct ItemRow : View {
                 .overlay(Circle().stroke(Color.red, lineWidth: 2))
             VStack(alignment: .leading){
                 Text(item.name).font(.headline)
-                Text("$\(item.price, specifier: "%.2f")")
+//                Text("$\(item.price, specifier: "%.2f")")
             }
             
             Spacer()
@@ -36,8 +37,8 @@ struct ItemRow : View {
     }
 }
 
-struct ItemRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemRow(item: MenuItem.example)
-    }
-}
+//struct ItemRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ItemRow(item: MenuItem.example)
+//    }
+//}

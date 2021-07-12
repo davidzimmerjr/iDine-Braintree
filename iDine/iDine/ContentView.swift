@@ -12,14 +12,18 @@ struct ContentView: View {
     
     var body: some View {
         let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
+//        let size: ItemSize
         
-        NavigationView{
-            List{
+        NavigationView {
+            List {
                 ForEach(menu){ section in
                     Section(header: Text(section.name)){
-                        ForEach(section.items){ item in
+                        ForEach(section.types, id: \.id) { item in
+//                            Text("row")
+
                             NavigationLink(destination: ItemDetail(item: item)){
                                 ItemRow(item: item).padding()
+                            
                             }
                         }
                     }
